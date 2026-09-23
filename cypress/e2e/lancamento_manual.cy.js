@@ -7,7 +7,7 @@ describe('Doações em lote via CSV', () => {
 
     cy.task('readProcessedNotes').then((processedNotes) => {
       cy.task('readCsvChunks', {
-        filename: 'doacoes2.csv',
+        filename: 'example.csv',
         processedNotes: processedNotes,
       }).then((rows) => {
         if (rows.length === 0) {
