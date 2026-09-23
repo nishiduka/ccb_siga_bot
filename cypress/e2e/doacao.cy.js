@@ -1,14 +1,6 @@
 describe('Doações em lote via CSV', () => {
   it('Importa todas as doações do CSV', () => {
     cy.visit('https://siga.congregacao.org.br/TES/TES03501.aspx');
-    // cy.visit('https://siga.congregacao.org.br');
-    // cy.url({ timeout: 90000 }).should('include', '/SIS/SIS99908.aspx');
-    // cy.get('.blockMsg > div', { timeout: 90000 }).should('not.exist');
-
-    // cy.get('[name="f_executar_programa"]').type('TES03501{enter}', {
-    //   delay: 100,
-    // });
-    // cy.get('#btn_executar_programa > .icon-arrow-right').click();
 
     cy.url({ timeout: 90000 }).should('include', '/TES/TES03501.aspx');
     cy.get('.blockMsg > div', { timeout: 90000 }).should('not.exist');

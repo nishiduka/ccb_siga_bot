@@ -1,6 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 const https = require('https');
+const dotenv = require('dotenv');
+dotenv.config();
 
 function parseCSV(filePath) {
   const content = fs.readFileSync(filePath, 'utf-8');
@@ -54,8 +56,8 @@ function saveProcessedNotes(filePath, notes) {
 }
 
 function sendTelegram(message) {
-  const token = '8076980659:AAHu50eGhFmbAlz3EeMzxBc3UpcvRS7dAD8';
-  const chatId = 991024544;
+  const token = process.env.TELEGRAM_TOKEN;
+  const chatId = process.env.TELEGRAM_CHAT_ID;
 
   if (!token || !chatId) {
     return Promise.resolve(false);
@@ -166,5 +168,6 @@ module.exports = {
     video: false,
     screenshotOnRunFailure: false,
     numTestsKeptInMemory: 0,
+    chromeWebSecurity: false,
   },
 };
