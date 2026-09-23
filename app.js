@@ -130,4 +130,4 @@ async function obterMetadadosPDF(caminhoArquivo) {
 //   obterMetadadosPDF,
 // };
 
-exibirTextoPDF('C:\\Users\\html9\\Downloads\\page-1.pdf');
+exibirTextoPDF('C:\\Users\\aaaaa\\Downloads\\page-1.pdf');
